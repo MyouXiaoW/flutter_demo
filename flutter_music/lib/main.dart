@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import './home/homepage.dart';
+import './routes/routes.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key key}) : super(key: key);
@@ -9,9 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      showPerformanceOverlay: true, // 开启
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(primaryColor: Colors.red),
+      showPerformanceOverlay: false, // 开启性能检测
       initialRoute: '/',
-      routes: <String, WidgetBuilder>{'/': (context) => HomePage()},
+      routes: routes,
       // Provide a function to handle named routes. Use this function to
       // identify the named route being pushed, and create the correct
       // screen.
