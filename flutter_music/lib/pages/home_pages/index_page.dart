@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_music/pages/home_pages/music_cloud.dart';
 import './music_cloud.dart';
+import './music_note.dart';
 
 class IndexPage extends StatefulWidget {
   IndexPage({Key key}) : super(key: key);
@@ -58,7 +59,7 @@ class _IndexPageState extends State<IndexPage>
         controller: _tabController,
         children: <Widget>[
           MusicCloud(),
-          Container(child: Text('note')),
+          MusicNote(),
         ],
       ),
     );

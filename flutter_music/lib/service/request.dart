@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:dio/dio.dart';
 import './service_url.dart';
+import 'dart:convert';
 
 Future request(String method, String url, [Map params]) async {
   Dio dio = Dio();
@@ -16,7 +17,7 @@ Future request(String method, String url, [Map params]) async {
       response = await dio.post(path, data: params);
       break;
   }
-  return response;
+  return json.decode(response.toString());
 }
 
 requestCreator(String method) {
